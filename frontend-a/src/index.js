@@ -1,7 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom";
 
-ReactDOM.render(
-    <p>Frontend a</p>,
-    document.getElementById("root")
-);
+// Use dynamic import here to allow webpack to interface with module federation code
+import("./bootstrap");
