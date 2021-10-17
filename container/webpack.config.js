@@ -1,5 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { ModuleFederationPlugin } = require('webpack').container;
+const ExternalTemplateRemotesPlugin = require("external-remotes-plugin");
 
 module.exports = {
   entry: path.join(__dirname, "src", "index.js"),
@@ -48,8 +50,17 @@ module.exports = {
     port: 9000
   },
   plugins: [
-      new HtmlWebpackPlugin({
-        template: path.join(__dirname, "src", "index.html"),
-      })
+    new ModuleFederationPlugin({
+      name: "container",
+      remotes: {
+        frontendA: "frontendA@http://localhost:9001/frontend-a.js",
+        frontendB: "frontendB@http://localhost:9002/frontend-b.js",
+      },
+      shared: {react: {singleton: true}, "react-dom": {singleton: true}},
+    }),
+    new ExternalTemplateRemotesPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "src", "index.html"),
+    })
   ]
 };
