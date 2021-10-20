@@ -1,0 +1,21 @@
+.navigation {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    a {
+        text-decoration: none;
+        font-family: 'Roboto', sans-serif;
+        background-color: #000000;
+        color: #FFFFFF;
+        padding: 1rem;
+        margin: 0 0 0 1rem;
+        &:hover {
+            background-color: #FFFFFF;
+            color: #000000;
+        }
+    }
+}
+.content {
+    margin-top: 1rem;
+}

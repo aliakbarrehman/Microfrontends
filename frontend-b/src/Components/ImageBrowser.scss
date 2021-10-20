@@ -1,0 +1,51 @@
+.pakistan-container {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    .img-container {
+        width: 100%;
+        height: 40rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        img {
+            width: auto;
+            height: inherit;
+            margin: auto;
+        }
+    }
+    .caption {
+        font-family: 'Roboto', sans-serif;
+    }
+    .controls {
+        button {
+            background-color: #00401A;
+            color: #FFFFFF;
+            border-radius: 0.5rem;
+            margin: 0 0 0 1rem;
+            padding: 1rem;
+            min-width: 10rem;
+            border: none;
+            text-align: center;
+            cursor: unset;
+            font-family: 'Roboto', sans-serif;
+            &:hover {
+                background-color: #FFFFFF;
+                color: #00401A;
+                cursor: pointer;
+            }
+            &:disabled {
+                background-color: #b1b1b1;
+                color: #FFFFFF;
+                cursor: unset;
+            }
+        }
+    }
+}
+
+.copyrights {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}

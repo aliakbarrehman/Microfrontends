@@ -1,10 +1,9 @@
 import React from 'react';
+import ImageBrowser from './Components/ImageBrowser';
 
 const App = () => {
     return(
-        <p>
-            Frontend A
-        </p>
+        <ImageBrowser />
     )
 };
 
